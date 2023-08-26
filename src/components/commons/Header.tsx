@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image';
 import Logo from '@/assets/img/logo.png';
 import { useContextRouter } from '@/context/RouterContext';
-import { RouterTypesActions } from '@/context/types/routes';
+import { RoutesTypes } from '@/context/types/routes';
 
 export const Header = ({ setAnimationState  }: any) => {
   const { path }: any = useContextRouter();
@@ -18,19 +18,19 @@ export const Header = ({ setAnimationState  }: any) => {
   const NavData = [
     {
       linkName: 'Home',
-      path: RouterTypesActions.HOME_ACTION
+      path: RoutesTypes.HOME_PAGE
     },
     {
       linkName: 'Resume',
-      path: RouterTypesActions.RESUME_ACTION
+      path: RoutesTypes.RESUME_PAGE
     },
     {
       linkName: 'Works',
-      path: RouterTypesActions.PORTFOLIO_ACTION
+      path: RoutesTypes.PORTFOLIO_PAGE
     },
     {
       linkName: 'Contact',
-      path: RouterTypesActions.CONTACT_ACTION
+      path: RoutesTypes.CONTACT_PAGE
     },
   ]
 
@@ -56,7 +56,7 @@ export const Header = ({ setAnimationState  }: any) => {
         {
           NavData.map(data => {
             return (
-              <li key={data.linkName} style={{ color: path === data.path ? 'white' : '' }} className='h-full flex items-center justify-center hover:text-gray-100 transition-all ease duration-300 cursor-pointer'>
+              <li key={data.linkName} style={{ color: path === data.path ? 'white' : '' }} className='h-full flex items-center justify-center hover:text-gray-100 transition-all ease duration-300'>
                 <button 
                   onClick={() => handleChangeRoute(data.path)}
                   type='button' 

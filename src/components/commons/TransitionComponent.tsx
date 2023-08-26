@@ -1,5 +1,5 @@
 import { useContextRouter } from '@/context/RouterContext';
-import { RouterTypesActions } from '@/context/types/routes';
+import { RoutesTypes } from '@/context/types/routes';
 import React, { useEffect, useState, FC } from 'react'
 
 interface TransitionComponentProps {
@@ -8,7 +8,7 @@ interface TransitionComponentProps {
 }
 
 interface AnimationState {
-  path: RouterTypesActions;
+  path: RoutesTypes;
   animation: boolean;
 }
 
